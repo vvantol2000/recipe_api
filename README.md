@@ -1,2 +1,2 @@
 Recipe API
-![bg](staticfiles/admin/img/bg.png)
+![bg_recipe](staticfiles/admin/img/bg_recipe.png)
