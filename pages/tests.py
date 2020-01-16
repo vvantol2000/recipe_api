@@ -33,3 +33,10 @@ class HomepageTests(SimpleTestCase):
         view.func.__name__,
         HomePageView.as_view().__name__
     )
+
+class AboutpageTests(SimpleTestCase):
+    def setup(self):
+        url = reverse('about')
+        self.response = self.client.get(url)
+
+        

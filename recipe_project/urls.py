@@ -25,6 +25,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
 
     # Local apps
+    path('api/', include('recipes.urls')),
     path('accounts/', include('users.urls')),
     path('', include('pages.urls'))
 ]

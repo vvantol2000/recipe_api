@@ -1,15 +1,56 @@
 <!-- templates/home.html -->
-{% extends '_base.html' %} 
+{% extends '_base.html' %}
+{% load static%}
 {% block title %}Home
 {% endblock title %} 
+{% block hero %}
+<!-- Home Section -->
+            <section class="home-section bg-dark bg-dark-alfa-30" data-background="{% static 'images/background.jpg'%}" id="home">
+                <div class="js-height-full container">
+
+
+                    <!-- Hero Content -->
+                    <div class="home-content">
+                        <div class="home-text">
+
+                            <h1 class="hs-line-14 font-alt mb-50 mb-xs-30">
+                                Recipe APi:- Django RESTFRAMEWORK
+                            </h1>
+
+                            <h2 class="hs-line-3 mb-0">
+                                EST 2015 &bull; MPS &bull; Tecode
+                            </h2>
+
+                        </div>
+                    </div>
+                    <!-- End Hero Content -->
+
+                    <!-- Scroll Down -->
+                    <div class="local-scroll">
+                        <a href="#about" class="scroll-down"><i class="fa fa-angle-down scroll-down-icon"></i></a>
+                    </div>
+                    <!-- End Scroll Down -->
+
+                </div>
+            </section>
+            <!-- End Home Section -->
+{% endblock hero %}
+
 {% block content %}
-<h1>Homepage</h1>
-{% if user.is_authenticated %}
-    Hi {{ user.email }}!
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
-    {% else %}
-    <p>You are not logged in </p>
-    <a href="{% url 'login' %}">Log In</a>
-    <a href="{% url 'signup' %}">Sign Up</a>
-    {% endif %}
+
+ <!-- Call Action Section -->
+            <section class="page-section bg-dark bg-dark-alfa-50" data-background="images/restaurant/section-bg-2.jpg">
+                <div class="container relative">
+
+                    <div class="align-center">
+                        <h3 class="banner-heading font-alt mb-40">Enjoy an unforgettable food &amp; service</h3>
+                        <div class="local-scroll">
+                            <a href="#reservations" class="btn btn-mod btn-w btn-medium btn-round">Reserve a table</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Call Action Section -->
+
 {% endblock content %}

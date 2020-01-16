@@ -4,72 +4,87 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>{% block title %}Bookstore{% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
-    <link rel="stylesheet" href="{% static 'css/tailwind.min.css' %}">
+    <title>{% block title %}Recipe Api{% endblock title %}</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="images/favicon.png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style-responsive.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/vertical-rhythm.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
   </head>
-  <body class="text-gray-800 antialiased">
-    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-        <span class="font-semibold text-xl tracking-tight">Tailwind CSS</span>
-      </div>
-      <div class="block lg:hidden">
-        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-        </button>
-      </div>
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow">
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-            Docs
-          </a>
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-            Examples
-          </a>
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-            Blog
-          </a>
+ <body class="appear-animate">
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="loader">Loading...</div>
         </div>
-        <div>
-          <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>
+        <!-- End Page Loader -->
+
+        <!-- Page Wrap -->
+        <div class="page" id="top">
+
+            {% block hero %}
+
+            {% endblock hero %}
+
+
+            <!-- Navigation panel -->
+
+            {% include 'partials/_navbar.html' %}
+
+            <!-- End Navigation panel -->
+
+
+            {% block content %}
+
+            {% endblock content %}
+
+
+           {% include 'partials/_footer.html' %}
+
+
+            <!-- Buy Button -->
+            <a href="https://themeforest.net/item/rhythm-multipurpose-onemulti-page-template/10140354" target="_blank" class="buy-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Buy</span></a>
+            <!-- End Buy Button -->
+
+
         </div>
-      </div>
-    </nav>
-    <main>
-      <div
-        class="relative pt-16 pb-32 flex content-center items-center justify-center"
-        style="min-height: 75vh;"
-      >
-      <div
-          class="absolute top-0 w-full h-full bg-center bg-cover"
-          style='background-image: url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1267&amp;q=80");'
-        >
-          <span
-            id="blackOverlay"
-            class="w-full h-full absolute opacity-75 bg-black"
-          ></span>
-        </div>
-        <div class="container relative mx-auto">
-          <div class="items-center flex flex-wrap">
-            <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-              <div class="pr-12">
-                <h1 class="text-white font-semibold text-5xl">
-                  Your story starts with us.
-                </h1>
-                <p class="mt-4 text-lg text-gray-300">
-                  This is a simple example of a Landing Page you can build using
-                  Tailwind Starter Kit. It features multiple CSS components
-                  based on the Tailwindcss design system.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    </main>
-    <div class="container">
-      {% block content %} {% endblock content %}
-    </div>
-  </body>
+        <!-- End Page Wrap -->
+
+
+        <!-- JS -->
+        <script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.scrollTo.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.localScroll.min.js'%}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.viewport.mini.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.countTo.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.appear.js'%}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.parallax-1.1.3.js'%}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.fitvids.js'%}"></script>
+        <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/wow.min.js'%}"></script>
+        <script type="text/javascript" src="{% static 'js/masonry.pkgd.min.js'%}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.simple-text-rotator.min.js'%}"></script>
+        <script type="text/javascript" src="{% static 'js/all.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/contact-reservations-form.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <!--[if lt IE 10]><script type="text/javascript" src="{% static 'js/placeholder.js' %}"></script><![endif]-->
+
+    </body>
+
 </html>

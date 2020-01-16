@@ -8,6 +8,9 @@ verify_ssl = true
 [packages]
 psycopg2-binary = "*"
 django = "*"
+django-crispy-forms = "*"
+djangorestframework = "*"
+markdown = "*"
 
 [requires]
 python_version = "3.7"
